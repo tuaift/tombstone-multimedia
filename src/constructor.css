@@ -1,0 +1,222 @@
+.constructor-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+}
+
+.constructor-steps {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.constructor-field {
+  margin-top: 80px;
+  width: 40%;
+  height: 60vh;
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: center;
+}
+
+.constructor-field .symbols {
+  width: 30%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.blob-container .blob-field {
+  width: 100%;
+  height: 56vh;
+  background-color: blue;
+}
+
+.btn-constructor {
+  /* margin-top: 40px; */
+  font-size: 3rem;
+  user-select: none;
+}
+
+.btn-constructor:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* draggable */
+
+.draggable-container {
+  position: absolute;
+  top: 23vh;
+  width: 30%;
+  height: 75vh;
+}
+
+.draggable-container.left {
+  left: 0;
+}
+
+.draggable-container.right {
+  right: 0;
+}
+
+.symbol-line {
+  width: 100%;
+  height: 6.148vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.642vh;
+}
+
+.ch {
+  width: 25%;
+  height: 100%;
+  padding: 0px 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 1 --- character */
+
+/* .ch1 {
+  background-image: url("./img_test/char-left/1.svg");
+}
+.ch2 {
+  background-image: url("./img_test/char-left/2.svg");
+}
+.ch3 {
+  background-image: url("./img_test/char-left/3.svg");
+}
+.ch4 {
+  background-image: url("./img_test/char-left/4.svg");
+}
+.ch5 {
+  background-image: url("./img_test/char-left/5.svg");
+}
+.ch6 {
+  background-image: url("./img_test/char-left/6.svg");
+}
+.ch7 {
+  background-image: url("./img_test/char-left/7.svg");
+}
+.ch8 {
+  background-image: url("./img_test/char-left/8.svg");
+}
+.ch9 {
+  background-image: url("./img_test/char-left/9.svg");
+}
+.ch10 {
+  background-image: url("./img_test/char-left/10.svg");
+}
+.ch11 {
+  background-image: url("./img_test/char-left/11.svg");
+}
+.ch12 {
+  background-image: url("./img_test/char-left/12.svg");
+}
+.ch13 {
+  background-image: url("./img_test/char-left/13.svg");
+}
+.ch14 {
+  background-image: url("./img_test/char-left/14.svg");
+}
+.ch15 {
+  background-image: url("./img_test/char-left/15.svg");
+}
+.ch16 {
+  background-image: url("./img_test/char-left/16.png");
+}
+.ch17 {
+  background-image: url("./img_test/char-left/17.svg");
+}
+.ch18 {
+  background-image: url("./img_test/char-left/18.svg");
+}
+.ch19 {
+  background-image: url("./img_test/char-left/19.svg");
+}
+.ch20 {
+  background-image: url("./img_test/char-left/20.png");
+}
+
+
+.ch21 {
+  background-image: url("./img_test/char-right/21.svg");
+}
+.ch22 {
+  background-image: url("./img_test/char-right/22.svg");
+  background-size: 90%;
+}
+.ch23 {
+  background-image: url("./img_test/char-right/23.svg");
+  background-size: 70%;
+}
+.ch24 {
+  background-image: url("./img_test/char-right/24.svg");
+}
+.ch25 {
+  background-image: url("./img_test/char-right/25.svg");
+}
+.ch26 {
+  background-image: url("./img_test/char-right/26.svg");
+  background-size: 80%;
+}
+.ch27 {
+  background-image: url("./img_test/char-right/27.svg");
+}
+.ch28 {
+  background-image: url("./img_test/char-right/28.svg");
+  background-size: 80%;
+}
+.ch29 {
+  background-image: url("./img_test/char-right/29.svg");
+}
+.ch30 {
+  background-image: url("./img_test/char-right/30.svg");
+}
+.ch31 {
+  background-image: url("./img_test/char-right/31.svg");
+}
+.ch32 {
+  background-image: url("./img_test/char-right/32.svg");
+}
+.ch33 {
+  background-image: url("./img_test/char-right/33.svg");
+}
+.ch34 {
+  background-image: url("./img_test/char-right/34.svg");
+}
+.ch35 {
+  background-image: url("./img_test/char-right/35.svg");
+}
+.ch36 {
+  background-image: url("./img_test/char-right/36.svg");
+}
+.ch37 {
+  background-image: url("./img_test/char-right/37.svg");
+}
+.ch38 {
+  background-image: url("./img_test/char-right/38.svg");
+}
+.ch39 {
+  background-image: url("./img_test/char-right/39.svg");
+}
+.ch40 {
+  background-image: url("./img_test/char-right/40.svg");
+} */

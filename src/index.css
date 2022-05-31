@@ -1,13 +1,279 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Suiss';
+  src: local('Suiss'), url(../public/fonts/SuisseIntl-Regular.otf) format('opentype');
+}
+
+body {
+  font-family: "Suiss";
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #000;
+}
+
+section, body, html {
+  height: 100%;
+}
+
+.container-app {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #f5f5f5; */
+}
+
+.s1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exit-container,
+.disc-container-wrap,
+.continue-container,
+.tombstone-constructor {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.splash-screen,
+.dark-screen,
+.final-container {
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.disc-container-wrap,
+.splash-form-screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ececec;
+}
+
+.final-container {
+  flex-direction: column;
+}
+
+.final-container h1 {
+  margin-bottom: 20px;
+}
+
+.final-container p {
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 200;
+}
+
+.final-container .constructor-field {
+  height: 600px;
+  width: 560px;
+  flex-direction: column;
+}
+
+.constructor-field.final .img-container {
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.final-img {
+  width: 55%;
+}
+
+.btn-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-final button {
+  height: 55px;
+  padding: 0px 40px;
+  border: 2px solid black;
+  background-position: center;
+  margin-top: -2px;
+  background-repeat: no-repeat;
+  color: #ececec;
+  background-color: #000;
+  font-size: 28px;
+  outline: none;
+}
+
+.btn-final button:nth-child(2) {
+  margin-top: 1px;
+  width: 150px;
+}
+
+.btn-final button:hover {
+  color: #000;
+  background-color: #ececec;
+}
+
+.disclaimer-container.final {
+  bottom: 20px;
+  right: 30px;
+  position: absolute;
+  width: calc(720px / 1.5);
+  height: calc(495px / 1.5);
+}
+
+.disclaimer-container.final .btn-disclaimer {
+  height: 40px;
+  margin-top: 1px;
+  font-size: 18px;
+}
+
+.disclaimer-container.final h1 {
+  font-size: 34px;
+  margin-top: 28px;
+  margin-bottom: 15px;
+  line-height: 36px;
+}
+
+.disclaimer-container.final p {
+  font-size: 18px;
+}
+
+.dark-screen {
+  background-color: #000;
+}
+
+.btn-container-exit {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-exit {
+  display: block;
+  border: none;
+  background-color: #000;
+  color: #f5f5f5;
+  font-size: 42px;
+  outline: 0;
+  margin-bottom: 6px;
+}
+
+.btn-exit:hover {
+  text-decoration: underline;
+}
+
+.disclaimer-container {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  bottom: 12.75vh;
+  right: 8vw;
+}
+
+.img-container {
+  margin: 35px 0 8px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img-container.splash {
+  margin: 0;
+}
+
+.splash-img {
+  width: 210px;
+  height: auto;
+}
+
+.logo-inside {
+  margin-bottom: 1px;
+  animation: logo-spin 140s linear infinite;
+}
+
+.splash-screen h2 {
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+}
+
+@keyframes logo-spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+h1, h2, p {
+  font-weight: 200;
+  display: inline-block;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 54px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+.disclaimer-container h1 {
+  margin-bottom: 3.6vh;
+  line-height: 50%;
+  text-align: center;
+}
+
+.main-container h2 {
+  display: block;
+}
+
+.txt-main p {
+  font-size: 20px;
+  line-height: 122%;
+  outline: none;
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 3.842vh;
+  right: 2.95vw;
+}
+
+.btn-disclaimer.txt {
+  text-decoration: underline;
+
+}
+
+.btn-disclaimer:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  user-select: none;
+}
+
+.btn-disclaimer.txt:hover {
+  text-decoration: none;
+}
+
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#questions-form fieldset:not(:first-of-type) {
+  display: none;
+}
+
+fieldset h1 {
+  text-align: center;
+  margin-bottom: 40px;
 }

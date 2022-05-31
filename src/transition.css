@@ -1,0 +1,53 @@
+.ex-enter {
+  opacity: 0;
+}
+
+.ex-enter-active {
+  opacity: 1;
+  transition: opacity 4s ease-in-out;
+}
+
+.continue-enter {
+  opacity: 0;
+}
+
+.continue-enter-active {
+  opacity: 1;
+  transition: opacity 4s ease-in-out;
+}
+
+.disc-enter {
+  opacity: 0;
+}
+
+.disc-enter-active {
+  opacity: 1;
+  transition: opacity 0s ease-in-out;
+}
+
+.disc-exit {
+  opacity: 1;
+}
+
+.disc-exit-active {
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.questions-exit {
+  opacity: 1;
+}
+
+.questions-exit-active {
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.constructor-3s-enter {
+  opacity: 0;
+}
+
+.constructor-3s-enter-active {
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+}
