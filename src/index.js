@@ -707,6 +707,6 @@ function DisclaimerTransition() {
 
 
 ReactDOM.render(
-  <DisclaimerTransition />,
+  <Continue />,
   document.getElementById('root')
 );
