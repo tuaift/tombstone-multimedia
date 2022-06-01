@@ -1,0 +1,161 @@
+.coin-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.graveyard-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ececec;
+  display: flex;
+}
+
+.arrows-final {
+  position: absolute;
+  background-image: url('./img_test/arrows.png');
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  bottom: 30px;
+  left: 30px;
+}
+
+.cemetry-final {
+  position: absolute;
+  background-image: url('./img_test/cemetry_ryba.png');
+  width: 90%;
+  height: 90%;
+  background-size: cover;
+  bottom: 0;
+  right: 0;
+}
+
+.cemetry-trigger:hover ~ .cemetry-final {
+   filter: blur(6px);
+   /* opacity: 60%; */
+   transition: .6s ease-in-out;
+}
+
+.cemetry-trigger {
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  z-index: 700;
+  top: 6vh;
+  left: 8vw;
+  /* background-color: red; */
+}
+
+.cemetry-trigger:hover::after {
+   content: "";
+   background: url('./img_test/coin_text.png')no-repeat;
+   background-size: 100%;
+   background-position: 100% 2;
+   width: 700px;
+   height: 700px;
+   position: absolute;
+   z-index: 700;
+}
+
+.btn-container.final {
+  text-align: center;
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-container.final-left {
+  position: absolute;
+  left: 40px;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-constructor {
+  margin-top: -22px;
+}
+
+
+.coin-page {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text_anim {
+  font-size: 20px;
+  letter-spacing: 4px;
+  transition: all .4s ease;
+  text-align: center;
+  animation: letters 20s ease infinite;
+}
+.text_anim:hover {
+  letter-spacing: 1px;
+  cursor: pointer;
+  animation: letters_end .4s ease 1 forwards ;
+
+}
+.some_styling {
+  width: 400px;
+  margin: 0 auto;
+}
+@keyframes letters {
+  0% {letter-spacing: 1px; filter: blur(.8px);}
+  50% {letter-spacing: 4px; filter: blur(.2px);}
+  100% {letter-spacing: 1px; filter: blur(.8px);}
+}
+@keyframes letters_end {
+  0% {letter-spacing: 2px; filter: blur(.8px);}
+  100% {letter-spacing: 1px; filter: blur(0px);}
+}
+.medallion {
+  background-color: transparent;
+  width: 700px;
+  height: 700px;
+  perspective: 1000px;
+}
+.medallion-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.medallion-reversed {
+  transform: rotateY(180deg);
+}
+.medallion:hover .medallion-inner {
+  transform: rotateY(20deg);
+  cursor: pointer;
+}
+.medallion:hover .medallion-reversed.medallion-inner {
+  transform: rotateY(160deg);
+  cursor: pointer;
+}
+.medallion-inner-front, .medallion-inner-back {
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.medallion-inner-front {
+  background-color: blue;
+  background: url('./img_test/coin_blob.png')no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+.medallion-inner-back {
+  background-color: red;
+  transform: rotateY(180deg);
+  background: url('./img_test/coin_text.png')no-repeat;
+  background-size: 100%;
+  background-position: 100% 2;
+}

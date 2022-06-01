@@ -6,10 +6,14 @@ import './index.css';
 import './transition.css';
 import './forms.css';
 import './constructor.css';
+import './final.css';
 import disclaimerImg from './img_test/icon_disclaimer.svg';
 import splashImg from './img_test/logo_inside_both.svg';
 import blob from './img_test/ryba_new.svg';
 import finalBlob from './img_test/final_blob.svg';
+import blobFiction from './img_test/blob_fiction.png';
+import coinBlob from './img_test/coin_blob.svg';
+import coinText from './img_test/coin_text.svg';
 import graveartRyba from './img_test/graveart_ryba.svg';
 import $ from 'jquery';
 import { Markup } from 'interweave';
@@ -48,7 +52,9 @@ function Splash() {
       <div className="img-container splash">
         <img className="splash-img logo-inside" src={splashImg} alt=""/>
       </div>
-      <h2>(scroll to discuss death)</h2>
+      <div className="comment">
+        <p className="comment-p">scroll to discuss death</p>
+      </div>
     </div>
   );
 }
@@ -61,6 +67,7 @@ function Q1({ formData, setFormData }) {
         onChange={(event) =>
           setFormData({ ...formData, q1: event.target.value })
         }
+        placeholder="type your answer here..."
       />
     </div>
   );
@@ -187,12 +194,19 @@ function Continue() {
             <h1 className="form-title"><Markup content={FormTitles[page]} /></h1>
             <div className="form-container">
               {PageDisplay()}
+              <div className="comment">
+                <p className="comment-p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; these answers will be your manifesto <br/>and will be used in the final version of the tombstone <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;answer sincerely</p>
+              </div>
               <h1 className="btn-disclaimer"
                 onClick={() => {
                   if (page === FormTitles.length - 1) {
                     transitionToTombstone();
                     console.log(formData);
                   } else {
+                    commentFadeOut();
                     setPage((currPage) => currPage + 1);
                   }
                 }}
@@ -225,12 +239,13 @@ function TestData({formData}) {
   );
 }
 
+
 function CharacterLeft() {
   return (
     <div className='draggable-container left'>
       <div className='symbol-line'>
         <Draggable>
-          <div className='ch ch1'></div>
+          <div className='ch ch1 to-clone' onClick={scaleSymbol()}></div>
         </Draggable>
         <Draggable>
           <div className='ch ch2'></div>
@@ -452,10 +467,17 @@ function Values() {
   return (
     <div>
       <ValuesLeft />
+      <div className="draggable-container left drop-field"></div>
       <ValuesRight />
     </div>
   );
 }
+
+$(document).ready(function() {
+  $('.medallion-inner').click(function() {
+    $(this).toggleClass('medallion-reversed');
+  })
+})
 
 function FinalRyba() {
   const [showForm, setShowForm] = useState(true);
@@ -485,33 +507,21 @@ function FinalRyba() {
         unmountOnExit
         onExiting={() => setShowForm(false)}
       >{<div className="final-container">
-          <h1 className="constructor-header">your <br /> tombstone</h1>
-          <div className="constructor-field final">
-            <div className="img-container">
-              <img className="final-img" src={finalBlob} alt=""/>
+          <h1 className="form-title">your tombstone</h1>
+          <div className="coin-page">
+            <div class="medallion">
+              <div class="medallion-inner">
+                <div class="medallion-inner-front"></div>
+                <div class="medallion-inner-back"></div>
+              </div>
             </div>
-            <p className="">i am afraid of death</p>
-            <p className="">and i cant see myself dying</p>
-            <p className="">i will leave nothing</p>
-            <p className="">no one will remember me</p>
-            <p className="">after i die there is nothing</p>
           </div>
-          <div className="btn-final">
-            <button>download</button>
-            <button>share</button>
+          <div className="btn-container final-left">
+            <h1 className="btn-constructor">download</h1>
+            <h1 className="btn-constructor">share</h1>
           </div>
-          <div className='disclaimer-container final'>
-            <h1>do you want <br /> to visit digital <br /> graveyard?</h1>
-            <div className="txt-main">
-              <p>your tombstone will become a part of big digital
-                <br/>graveart. you can explore each others
-                <br/>tombstone and pay respect
-              </p>
-            </div>
-            <div className="btn-container">
-              <button className="btn-disclaimer" onClick={() => transitionToEx()}>end your experience</button>
-              <button className="btn-disclaimer" onClick={() => transitionToFinal()}>i want to continue</button>
-            </div>
+          <div className="btn-container final">
+            <h1 className="btn-constructor" onClick={() => transitionToFinal()}>visit<br/> graveyard</h1>
           </div>
         </div>}
       </CSSTransition>
@@ -539,13 +549,27 @@ function FinalRyba() {
 
 function GraveartRyba() {
   return (
-    <div className="ryba-container">
-      <h1 className="constructor-header">graveart</h1>
-      <div className="img-container ryba">
-        <img className="graveart-ryba" src={graveartRyba}/>
-      </div>
+    <div className="graveyard-container">
+      <h1 className="form-title">cemetry</h1>
+      <div className="arrows-final"></div>
+      <div className="cemetry-trigger"></div>
+      <div className="cemetry-final"></div>
     </div>
   );
+}
+
+function commentFadeOut() {
+  $(".comment").fadeOut("slow");
+}
+
+function scaleSymbol() {
+    //this will attach the class to every target
+    $(document).on('click', function (event) {
+      if ($(event.target).hasClass('ch')) {
+        $(event.target).addClass('ch-large');
+      }
+    });
+
 }
 
 
@@ -560,6 +584,8 @@ function TombstoneConstructor() {
       setShowTombstone(true);
     }, 4000);
   };
+
+
   const FormTitles = [
     "this is the form of your<br/>tombstone",
     "choose<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;what best describes you<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;as a person",
@@ -593,17 +619,25 @@ function TombstoneConstructor() {
           </div>
           <div className="constructor-field">
             <div className="blob-container">
-              <div className="blob-field"></div>
+              <div className="blob-field">
+                <img className="constructor-img" src={blobFiction} alt=""/>
+              </div>
               <h1 className="btn-constructor"
                 onClick={() => {
                   if (page === FormTitles.length - 1) {
                     transitionToFinal();
                   } else {
+                    commentFadeOut();
                     setPage((currPage) => currPage + 1);
                   }
                 }}
               >next
               </h1>
+              <div className="comment">
+                <p className="comment-p">this form</p>
+                <p className="comment-p">was generated</p>
+                <p className="comment-p">using your browser data</p>
+              </div>
             </div>
           </div>
           {CharacterDisplay()}
@@ -707,6 +741,6 @@ function DisclaimerTransition() {
 
 
 ReactDOM.render(
-  <DisclaimerTransition />,
+  <FinalRyba />,
   document.getElementById('root')
 );

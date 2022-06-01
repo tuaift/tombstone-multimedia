@@ -44,7 +44,15 @@
 .blob-container .blob-field {
   width: 100%;
   height: 56vh;
-  background-color: blue;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.constructor-img {
+  width: 90%;
+  margin-bottom: 30px;
 }
 
 .btn-constructor {
@@ -56,6 +64,17 @@
 .btn-constructor:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.comment {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.constructor-field .comment {
+  text-align: center;
 }
 
 /* draggable */
@@ -92,131 +111,318 @@
   background-position: center;
 }
 
+.ch-large {
+  height: 180%;
+}
+
+.ui-state-highlight {
+  background-color: yellow;
+}
+
+.ch:hover {
+  /* height: 140%; */
+  cursor: pointer;
+}
+
+.ch:hover::after {
+  content: "meaning";
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 120px;
+  height: 38px;
+  padding-top: 20px;
+  background-image: url("./img_test/hover_bg_120.png");
+  background-size: contain;
+  background-position: center;
+  color: #000000;
+  font-size: 16px;
+  z-index: 100;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.ch-large:hover::after {
+  content: "meaning";
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  width: 120px;
+  height: 38px;
+  padding-top: 20px;
+  background-image: url("./img_test/hover_bg_120.png");
+  background-size: contain;
+  background-position: center;
+  color: #000000;
+  font-size: 16px;
+  z-index: 100;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.ch:active::after {
+  display: none;
+}
+
+.ch:active {
+  height: 180%;
+}
+
+
+
 /* 1 --- character */
 
-/* .ch1 {
+.ch1 {
   background-image: url("./img_test/char-left/1.svg");
+}
+.ch1:hover::after {
+  content: "soft";
 }
 .ch2 {
   background-image: url("./img_test/char-left/2.svg");
 }
+.ch2:hover::after {
+  content: "loyal";
+}
 .ch3 {
   background-image: url("./img_test/char-left/3.svg");
+}
+.ch3:hover::after {
+  content: "stubborn";
 }
 .ch4 {
   background-image: url("./img_test/char-left/4.svg");
 }
+.ch4:hover::after {
+  content: "harsh";
+}
 .ch5 {
   background-image: url("./img_test/char-left/5.svg");
+}
+.ch5:hover::after {
+  content: "homebody";
 }
 .ch6 {
   background-image: url("./img_test/char-left/6.svg");
 }
+.ch6:hover::after {
+  content: "open";
+}
 .ch7 {
   background-image: url("./img_test/char-left/7.svg");
+}
+.ch7:hover::after {
+  content: "generous";
 }
 .ch8 {
   background-image: url("./img_test/char-left/8.svg");
 }
+.ch8:hover::after {
+  content: "purposeful";
+}
 .ch9 {
   background-image: url("./img_test/char-left/9.svg");
+}
+.ch9:hover::after {
+  content: "thoughtful";
 }
 .ch10 {
   background-image: url("./img_test/char-left/10.svg");
 }
+.ch10:hover::after {
+  content: "friendly";
+}
 .ch11 {
   background-image: url("./img_test/char-left/11.svg");
+}
+.ch11:hover::after {
+  content: "self-seeker";
 }
 .ch12 {
   background-image: url("./img_test/char-left/12.svg");
 }
+.ch12:hover::after {
+  content: "pessimist";
+}
 .ch13 {
   background-image: url("./img_test/char-left/13.svg");
+}
+.ch13:hover::after {
+  content: "closed";
 }
 .ch14 {
   background-image: url("./img_test/char-left/14.svg");
 }
+.ch14:hover::after {
+  content: "romantic";
+}
 .ch15 {
   background-image: url("./img_test/char-left/15.svg");
+}
+.ch15:hover::after {
+  content: "patient";
 }
 .ch16 {
   background-image: url("./img_test/char-left/16.png");
 }
+.ch16:hover::after {
+  content: "creative";
+}
 .ch17 {
   background-image: url("./img_test/char-left/17.svg");
+}
+.ch17:hover::after {
+  content: "optimist";
 }
 .ch18 {
   background-image: url("./img_test/char-left/18.svg");
 }
+.ch18:hover::after {
+  content: "risky";
+}
 .ch19 {
   background-image: url("./img_test/char-left/19.svg");
 }
+.ch19:hover::after {
+  content: "kind";
+}
 .ch20 {
   background-image: url("./img_test/char-left/20.png");
+}
+.ch20:hover::after {
+  content: "soft";
 }
 
 
 .ch21 {
   background-image: url("./img_test/char-right/21.svg");
 }
+.ch21:hover::after {
+  content: "initiative";
+}
 .ch22 {
   background-image: url("./img_test/char-right/22.svg");
   background-size: 90%;
+}
+.ch22:hover::after {
+  content: "straightforward";
+  width: 140px;
+  margin-left: -40px;
 }
 .ch23 {
   background-image: url("./img_test/char-right/23.svg");
   background-size: 70%;
 }
+.ch23:hover::after {
+  content: "neat";
+}
 .ch24 {
   background-image: url("./img_test/char-right/24.svg");
 }
+.ch24:hover::after {
+  content: "indecisive";
+}
 .ch25 {
   background-image: url("./img_test/char-right/25.svg");
+}
+.ch25:hover::after {
+  content: "disorganized";
+  width: 130px;
 }
 .ch26 {
   background-image: url("./img_test/char-right/26.svg");
   background-size: 80%;
 }
+.ch26:hover::after {
+  content: "impulsive";
+}
 .ch27 {
   background-image: url("./img_test/char-right/27.svg");
+}
+.ch27:hover::after {
+  content: "caring";
 }
 .ch28 {
   background-image: url("./img_test/char-right/28.svg");
   background-size: 80%;
 }
+.ch28:hover::after {
+  content: "lazy";
+}
 .ch29 {
   background-image: url("./img_test/char-right/29.svg");
+}
+.ch29:hover::after {
+  content: "anxious";
 }
 .ch30 {
   background-image: url("./img_test/char-right/30.svg");
 }
+.ch30:hover::after {
+  content: "responsible";
+  width: 130px;
+}
 .ch31 {
   background-image: url("./img_test/char-right/31.svg");
+}
+.ch31:hover::after {
+  content: "thrifty";
 }
 .ch32 {
   background-image: url("./img_test/char-right/32.svg");
 }
+.ch32:hover::after {
+  content: "communicative";
+  width: 140px;
+}
 .ch33 {
   background-image: url("./img_test/char-right/33.svg");
+}
+.ch33:hover::after {
+  content: "stable";
 }
 .ch34 {
   background-image: url("./img_test/char-right/34.svg");
 }
+.ch34:hover::after {
+  content: "irritable";
+}
 .ch35 {
   background-image: url("./img_test/char-right/35.svg");
+}
+.ch35:hover::after {
+  content: "reasonable";
 }
 .ch36 {
   background-image: url("./img_test/char-right/36.svg");
 }
+.ch36:hover::after {
+  content: "brave";
+}
 .ch37 {
   background-image: url("./img_test/char-right/37.svg");
+}
+.ch37:hover::after {
+  content: "perfectionist";
+  width: 130px;
 }
 .ch38 {
   background-image: url("./img_test/char-right/38.svg");
 }
+.ch38:hover::after {
+  content: "calm";
+}
 .ch39 {
   background-image: url("./img_test/char-right/39.svg");
 }
+.ch39:hover::after {
+  content: "attentive";
+}
 .ch40 {
   background-image: url("./img_test/char-right/40.svg");
-} */
+}
+.ch40:hover::after {
+  content: "loner";
+}
