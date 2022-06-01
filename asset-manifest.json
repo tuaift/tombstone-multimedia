@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tombstone-multimedia/static/css/main.153e705e.css",
-    "main.js": "/tombstone-multimedia/static/js/main.7575f12a.js",
+    "main.js": "/tombstone-multimedia/static/js/main.4afe312b.js",
     "static/media/graveart_ryba.svg": "/tombstone-multimedia/static/media/graveart_ryba.9006cb22ab7f3ef647febd666c0a8260.svg",
     "static/media/cemetry_ryba.png": "/tombstone-multimedia/static/media/cemetry_ryba.34083de86d3356fb1444.png",
     "static/media/coin_blob.svg": "/tombstone-multimedia/static/media/coin_blob.a4301e27dff34ced65120f0d746cd675.svg",
@@ -55,10 +55,10 @@
     "static/media/22.svg": "/tombstone-multimedia/static/media/22.d786bef3276a5dfb0bee.svg",
     "index.html": "/tombstone-multimedia/index.html",
     "main.153e705e.css.map": "/tombstone-multimedia/static/css/main.153e705e.css.map",
-    "main.7575f12a.js.map": "/tombstone-multimedia/static/js/main.7575f12a.js.map"
+    "main.4afe312b.js.map": "/tombstone-multimedia/static/js/main.4afe312b.js.map"
   },
   "entrypoints": [
     "static/css/main.153e705e.css",
-    "static/js/main.7575f12a.js"
+    "static/js/main.4afe312b.js"
   ]
 }
