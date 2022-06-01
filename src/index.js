@@ -741,6 +741,6 @@ function DisclaimerTransition() {
 
 
 ReactDOM.render(
-  <FinalRyba />,
+  <DisclaimerTransition />,
   document.getElementById('root')
 );
